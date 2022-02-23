@@ -46,7 +46,7 @@ function TodoProvider(props) {
     <TodoContext.Provider value={{
       loading,
       error,
-      totalTodos,
+      totalTodos, // Esta es la variable que importamos en TodoCounter
       completedTodos,
       searchValue,
       setSearchValue,
