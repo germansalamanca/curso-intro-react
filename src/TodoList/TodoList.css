@@ -1,0 +1,6 @@
+.TodoList ul{
+  list-style: none;
+  padding: 0;
+  max-width: 300px;
+  width: 100%;
+}

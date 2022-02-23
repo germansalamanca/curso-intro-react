@@ -1,0 +1,12 @@
+.TodoSearch{
+  border: 1px solid rgb(216, 216, 216);
+  font-size: 1.3rem;
+  color: rgb(56, 56, 56);
+  padding: .4rem .7rem;
+  border-radius: 4px;
+  box-shadow: 1px 4px 12px rgb(230, 230, 230);
+  margin-bottom: 1rem;
+}
+.TodoSearch:focus{
+  box-shadow: 1px 14px 12px rgb(230, 230, 230);
+}
