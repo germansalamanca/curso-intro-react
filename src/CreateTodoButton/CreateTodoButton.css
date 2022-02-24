@@ -1,4 +1,6 @@
 .CreateTodoButton{
+  position: relative;
+  z-index: 10;
   background-color: rgb(15, 15, 15);
   color: white;
   border: none;
@@ -6,6 +8,7 @@
   padding: .7rem 1.4rem;
   cursor: pointer;
   transition: all ease .5s;
+  border: 2px solid white;
 }
 .CreateTodoButton:hover{
   background-color: rgb(41, 41, 41);

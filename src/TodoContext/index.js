@@ -13,6 +13,9 @@ function TodoProvider(props) {
   } = useLocalStorage('TODOS_V1', []);
   const [searchValue, setSearchValue] = React.useState('');
 
+  // Vamos a crear un nuevo estado para nuestro modal
+  const [openModal, setOpenModal] = React.useState(false);
+
   const completedTodos = todos.filter(todo => !!todo.completed).length;
   const totalTodos = todos.length;
 
@@ -31,7 +34,7 @@ function TodoProvider(props) {
   const completeTodo = (text) => {
     const todoIndex = todos.findIndex(todo => todo.text === text);
     const newTodos = [...todos];
-    newTodos[todoIndex].completed = true;
+    newTodos[todoIndex].completed = !newTodos[todoIndex].completed;
     saveTodos(newTodos);
   };
 
@@ -46,13 +49,16 @@ function TodoProvider(props) {
     <TodoContext.Provider value={{
       loading,
       error,
-      totalTodos, // Esta es la variable que importamos en TodoCounter
+      totalTodos,
       completedTodos,
       searchValue,
       setSearchValue,
       searchedTodos,
       completeTodo,
       deleteTodo,
+      // Vamos a cuardar el estado de modal y su actualizador en value de nuestro provider
+      openModal,
+      setOpenModal
     }}>
       {props.children}
     </TodoContext.Provider>

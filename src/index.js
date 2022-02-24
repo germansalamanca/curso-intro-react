@@ -7,3 +7,5 @@ ReactDOM.render(
   <App />,
   document.getElementById('root')
 );
+
+//localStorage.setItem('TODOS_V1', '[{"text":"hacer algo","completed":false},{"text":"hacer nada","completed":false},{"text":"Jugar con majandis","completed":false},{"text":"Pasear a pipo","completed":false},{"text":"tomar tinto","completed":false}]')

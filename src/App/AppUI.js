@@ -5,16 +5,18 @@ import { TodoSearch } from '../TodoSearch';
 import { TodoList } from '../TodoList';
 import { TodoItem } from '../TodoItem';
 import { CreateTodoButton } from '../CreateTodoButton';
+import { Modal } from '../Modal';
 
 function AppUI() {
-  // En vez de llamar a value.error, value.loading... se pone un objeto para tenerlas directamente en nuestro consumer como error, loading...
-  // De lo contrario sería así: const value = React.useContext(TodoContext);
   const {
     error,
     loading,
     searchedTodos,
     completeTodo,
     deleteTodo,
+    // Acá también debemos traer las propiedades de nuestro contexto relacionadas con el Modal
+    openModal,
+    setOpenModal
   } = React.useContext(TodoContext);
   
   return (
@@ -36,7 +38,18 @@ function AppUI() {
           />
         ))}
       </TodoList>
-      <CreateTodoButton />
+      <CreateTodoButton 
+        /* Pasamos la propiedad setopenModal para que la ejecute en el componente como toggleModal */
+        toggleModal={setOpenModal}
+        modalAbierto={openModal}
+      />
+
+      {!!openModal && /*comprobar que exista openModal (&&) y sea true (!!) */ (
+        <Modal>
+          <p>{searchedTodos[0]?.text}</p>
+        </Modal>
+      )}
+
     </React.Fragment>
   );
 }
