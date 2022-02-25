@@ -30,7 +30,7 @@ function TodoForm(){
         className="text"
         onChange={onWrite}
         value={newTodoValue}
-        placeholder="Picar cilantro para el jugo."
+        placeholder="Hacer almuerzo."
         />
       <div className="TodoForm-buttonContainer">
         <button

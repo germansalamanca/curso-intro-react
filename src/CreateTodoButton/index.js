@@ -19,7 +19,7 @@ function CreateTodoButton(props){
       /*onClick={()=>onClickButton('Pipo')}*/
       onClick={toggleMyModal}
       >
-      Añadir
+      +
     </button>
   )
 }

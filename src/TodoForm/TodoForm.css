@@ -1,8 +1,8 @@
 .form{
   width: 100%;
-  max-width: 400px;
-  background-color: black;
-  padding: 2rem;
+  max-width: 500px;
+  background-color: rgb(12, 12, 12);
+  padding: 2.5rem;
   border-radius: 6px;
 }
 .form label{
@@ -22,12 +22,16 @@
 .TodoForm-button{
   cursor: pointer;
   display: inline-block;
-  font-size: 20px;
+  font-size: 1rem;
   color: black;
   background-color: white;
   border: none;
   padding: .6rem 1rem;
   border-radius: 4px;
+  transition: all ease .3s;
+}
+.TodoForm-button:hover{
+  background-color: rgb(224, 224, 224);
 }
 .TodoForm-button--cancel{
   margin-right: 1rem;
