@@ -4,6 +4,7 @@ import { TodoCounter } from '../TodoCounter';
 import { TodoSearch } from '../TodoSearch';
 import { TodoList } from '../TodoList';
 import { TodoItem } from '../TodoItem';
+import { TodoForm } from '../TodoForm';
 import { CreateTodoButton } from '../CreateTodoButton';
 import { Modal } from '../Modal';
 
@@ -14,7 +15,6 @@ function AppUI() {
     searchedTodos,
     completeTodo,
     deleteTodo,
-    // Acá también debemos traer las propiedades de nuestro contexto relacionadas con el Modal
     openModal,
     setOpenModal
   } = React.useContext(TodoContext);
@@ -39,15 +39,18 @@ function AppUI() {
         ))}
       </TodoList>
       <CreateTodoButton 
-        /* Pasamos la propiedad setopenModal para que la ejecute en el componente como toggleModal */
         toggleModal={setOpenModal}
         modalAbierto={openModal}
       />
-
       {!!openModal && /*comprobar que exista openModal (&&) y sea true (!!) */ (
+        /*
         <Modal>
           <p>{searchedTodos[0]?.text}</p>
         </Modal>
+        */
+       <Modal>
+         <TodoForm/>
+       </Modal>
       )}
 
     </React.Fragment>

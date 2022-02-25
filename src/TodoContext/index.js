@@ -37,6 +37,15 @@ function TodoProvider(props) {
     newTodos[todoIndex].completed = !newTodos[todoIndex].completed;
     saveTodos(newTodos);
   };
+  // Creamos la función para añadir tudus
+  const addTodo = (text) => {
+    const newTodos = [...todos];
+    newTodos.push({
+      text, // No hay necesidad de text: text
+      completed: false
+    });
+    saveTodos(newTodos);
+  };
 
   const deleteTodo = (text) => {
     const todoIndex = todos.findIndex(todo => todo.text === text);
@@ -54,9 +63,10 @@ function TodoProvider(props) {
       searchValue,
       setSearchValue,
       searchedTodos,
+      // Pasamos la función addtodo en el value de nuestro provider
+      addTodo,
       completeTodo,
       deleteTodo,
-      // Vamos a cuardar el estado de modal y su actualizador en value de nuestro provider
       openModal,
       setOpenModal
     }}>
