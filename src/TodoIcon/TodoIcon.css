@@ -1,0 +1,20 @@
+.Icon-container{
+  opacity: .7;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all ease .3s;
+}
+.Icon-container--delete{
+  border: 1px solid rgb(131, 131, 131);
+  border-radius: 100px;
+  cursor: pointer;
+  width: 1.7rem;
+  height: 1.7rem;
+  padding: .2rem;
+}
+.Icon-container--delete:hover{
+  opacity: 1;
+  background-color: white;
+}

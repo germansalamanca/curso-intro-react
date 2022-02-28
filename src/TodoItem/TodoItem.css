@@ -6,15 +6,21 @@
   cursor: pointer;
   background: rgb(255, 255, 255);
   border: 1px solid rgb(173, 173, 173);
-  padding: .3rem .5rem;
+  padding: .3rem .3rem .3rem .5rem;
   font-size: .8rem;
   border-radius: 4px;
   color: rgb(49, 49, 49);
   flex-shrink: 0;
   opacity: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .Icon-check:hover{
   opacity: .9;
+}
+.Icon-check .text{
+  margin-right: .15rem;
 }
 .Icon-check--active{
   color: rgb(255, 255, 255);
